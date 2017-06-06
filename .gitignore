@@ -2,5 +2,3 @@
 *.log
 .idea/
 .DS_Store
-target/
-project/
