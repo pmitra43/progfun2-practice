@@ -1,10 +1,10 @@
 package week4.Signals
 
+import week4.frp.Var
+
 
 class BankAccount {
   val balance = Var(0)
-
-  def currentBalance = balance
 
   def deposit(amount: Int) =
     if (amount > 0) {

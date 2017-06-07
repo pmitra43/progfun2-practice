@@ -1,5 +1,7 @@
 package week4.frp
 
+import scala.util.DynamicVariable
+
 class Signal[T](expr: => T) {
   import Signal._
   private var myExpr: () => T = _
@@ -35,6 +37,6 @@ object NoSignal extends Signal[Nothing](???) {
 }
 
 object Signal {
-  private val caller = new StackableVariable[Signal[_]](NoSignal)
+  private val caller = new DynamicVariable[Signal[_]](NoSignal)
   def apply[T](expr: => T) = new Signal(expr)
 }
